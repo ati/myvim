@@ -32,6 +32,9 @@ set wildmode=list:longest
 set hidden
 set pastetoggle=<F2>
 set mouse=a
+set mousemodel=extend
+" MAC OS vim 7.3+
+set clipboard=unnamed
 
 nnoremap ' `
 nnoremap ` '
@@ -43,6 +46,12 @@ nnoremap <silent> <F5> :TlistToggle<CR>
 let tlist_php_settings = 'php;c:class;f:function;c:constant'
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
+
+
+" status highlighting from
+" http://www.reddit.com/r/vim/comments/gexi6/a_smarter_statusline_code_in_comments/
+" end of status highlighting code
+
 "
 " :autocmd BufRead *.php set tags=$HOME/ivacy-tags
 autocmd BufRead,BufNewFile *.tpl source $VIMRUNTIME/ftplugin/html.vim
@@ -65,4 +74,6 @@ set directory=~/.vim-tmp
 " colorscheme desert256
 " colorscheme railscasts
 colorscheme xoria256
-
+highlight LineNr ctermbg=none ctermfg=237
+highlight StatusLine ctermbg=59
+highlight StatusLineNC ctermbg=236
